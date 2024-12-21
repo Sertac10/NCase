@@ -1,0 +1,17 @@
+global using AutoMapper;
+global using FluentValidation;
+global using LinqKit;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.IdentityModel.Tokens;
+global using NCase.Application.Common.GenericObjects;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Linq.Dynamic.Core;
+global using System.Linq.Expressions;
+global using System.Reflection;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Threading.Tasks;

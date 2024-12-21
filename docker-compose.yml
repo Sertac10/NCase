@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  api:
+    image: myapp-api:latest
+    build:
+      context: .
+      dockerfile: ./Presentation/NCase.API/Dockerfile
+    container_name: myapp-api
+    networks:
+      - mytest    
+    ports:
+      - "5000:80" 
+
+  client:
+    image: myapp-client:latest
+    build:
+      context: .
+      dockerfile: ./Presentation/NTaskCase.Client/Dockerfile
+    container_name: myapp-client
+    networks:
+      - mytest
+    ports:
+      - "3000:80" 
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: my-sqlserver
+    networks:
+      - mytest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SNn123@d
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433" 
+  
+networks:
+  mytest:
+    external: true
