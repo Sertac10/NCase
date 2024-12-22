@@ -15,7 +15,7 @@ namespace NCase.Application
             serviceCollection.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
             serviceCollection.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+            serviceCollection.AddLocalization();
             //otomatize et -->
 
             serviceCollection.AddScoped<CharacterSpecifications>();
@@ -23,7 +23,6 @@ namespace NCase.Application
             serviceCollection.AddScoped<DbParameterTypeSpecifications>();
             serviceCollection.AddScoped<ErrorSpecifications>();
             serviceCollection.AddScoped<UserSpecifications>();
-
             serviceCollection.AddScoped<ICryptographyService, CryptographyService>();
 
         }

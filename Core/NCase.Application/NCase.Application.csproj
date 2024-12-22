@@ -40,4 +40,17 @@
 	  <Folder Include="Features\Queries\Episodes\GetValueEpisode\" />
 	  <Folder Include="Features\Queries\Episodes\GetByIdorGuidEpisode\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources\Resource1.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resource1.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Resource1.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
 </Project>

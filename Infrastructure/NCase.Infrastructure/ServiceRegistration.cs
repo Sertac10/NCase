@@ -1,11 +1,12 @@
-﻿using NCase.Application.Abstractions.Caching;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using NCase.Application.Abstractions.Caching;
+using NCase.Application.Abstractions.Services.Localization;
 using NCase.Application.Abstractions.Storage;
 using NCase.Application.Abstractions.Token;
 using NCase.Application.Services;
 using NCase.Infrastructure.Services;
 using NCase.Infrastructure.Services.Storage;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
 namespace NCase.Infrastructure
@@ -18,7 +19,7 @@ namespace NCase.Infrastructure
             serviceCollection.AddScoped<IStorageService, StorageService>();
             serviceCollection.AddScoped<ITokenHandler, TokenHandler>();
             serviceCollection.AddScoped<IRedisCacheService, RedisCacheService>();
-
+            serviceCollection.AddScoped<ILocalizationService, LocalizationService>();
             serviceCollection.AddTransient<IConnectionMultiplexer>(sp =>
             {
                 var options = new ConfigurationOptions
